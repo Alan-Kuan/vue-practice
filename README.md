@@ -4,3 +4,5 @@
 
 這是我初次使用 Vue 設計出來的網頁，歡迎志同道合的人互相交流，我這個新手\
 就向其他高手多多指教了。
+
+展示網址：https://alan-kuan.github.io/vue-practice/
