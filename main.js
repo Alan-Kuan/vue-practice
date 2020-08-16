@@ -18,8 +18,20 @@ Vue.component('product', {
     template: `
         <div class="product">
 
-            <div class="product_image">
+            <div class="product_left_part">
+
                 <img :src="image">
+
+                <div class="panel">
+                    <div class="status">
+                        <span style="color: green;" v-if="number > 10">庫存充足</span>
+                        <span style="color: DarkRed;" v-else-if="number > 0">尚餘 {{ number }} 件！</span>
+                        <span style="color: DarkRed;" v-else>已售罄！</span>
+                    </div>
+
+                    <button class="add_to_cart" @click="addToCart" :disabled="outOfStock">加到購物車</button>
+                </div>
+
             </div>
 
             <div class="product_info">
@@ -59,16 +71,6 @@ Vue.component('product', {
                     </span>
                 </div>
 
-            </div>
-
-            <div class="panel">
-                <div class="status">
-                    <span style="color: green;" v-if="number > 10">庫存充足</span>
-                    <span style="color: DarkRed;" v-else-if="number > 0">尚餘 {{ number }} 件！</span>
-                    <span style="color: DarkRed;" v-else>已售罄！</span>
-                </div>
-
-                <button class="add_to_cart" @click="addToCart" :disabled="outOfStock">加到購物車</button>
             </div>
 
         </div>
