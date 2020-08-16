@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Learning Vue.js</title>
+
+        <meta content-type="text/html" charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=2" />
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+    </head>
+
+    <body>
+        <div class="page_container">
+
+            <div id="app">
+
+                <div class="banner">
+                    <span>Learning Vue.js!</span>
+
+                    <button class="premium_button" v-if="!premium" @click="onUpgradeMembership">升級會員</button>
+                </div>
+
+                <div class="statement" v-if="show_statement">
+                    <button class="close" @click="onCloseStatement">x</button>
+                    <h2>聲明</h2>
+                    <p>
+                        本網頁無營利行為，僅作為個人練習設計與交流之用，且網頁記載資訊純屬虛構。圖片素材皆取自網路，如有侵權請聯絡我。
+                    </p>
+                    <h2>Statement</h2>
+                    <p>
+                        There is no profit-making behavior on this webpage. This is only my practice of designing and a work sharing with others to exchange ideas. Besides, information of the products provided here is fictitious. All the images used here is collected from the Internet, if this causes patent infringement, please contact me.
+                    </p>
+                </div>
+
+                <product @add-to-cart="onAddToCart"
+                         :premium="premium"
+                         v-for="id in ['3453', '3454', '3455']"
+                         :product_id="id"
+                         :product="products[id]">
+                </product>
+
+                <div class="shopping_cart">
+
+                    <div class="animation">
+                        <div class="cart_container" @click="onToggleShoppingCart" :style="expand_shopping_cart ? stay_right : stay_left">
+                            <img class="cart_img" src="https://cdn.onlinewebfonts.com/svg/img_290616.png" />
+                            <div class="cart">{{ cart.length }}</div>
+                        </div>
+
+                        <img class="cashier_img" src="https://cdn4.iconfinder.com/data/icons/jumpicon-e-commerce-line/32/-_Cashbox-Cashier-Machine-Cash-Register-512.png" />
+                    </div>
+
+                    <div class="ground"></div>
+
+                    <div class="shopping_list" v-if="expand_shopping_cart">
+                        <span v-if="cartIsEmpty">購物車是空的喔！</span>
+                        <ul v-else>
+                            <li v-for="(item, idx) in cart">
+                                <span>
+                                    [{{ item.id }}]
+                                    {{ products[item.id].name }}
+                                    ({{ products[item.id].variants[item.variant].color_name }}
+                                    {{ products[item.id].variants[item.variant].sizes[item.size] }})
+                                    NT$ {{ premium ? products[item.id].price * 0.75 : products[item.id].price }}
+                                </span>
+                                <button class="remove_from_cart" @click="onRemoveFromCart(idx)">移出購物車</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="total" :style="expand_shopping_cart ? {opacity: 1} : {opacity: 0}">
+                        總計：NTD$ {{ total }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div>Author: Alan Kuan</div>
+                <div>E-mail: <a href="mailto:kuanahaoan@gmail.com">kuanhaoan@gmail.com</a></div>
+            </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+
+</html>
