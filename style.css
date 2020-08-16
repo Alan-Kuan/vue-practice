@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
+@media screen and (min-width: 321px){
+    .banner span {
+        font-size: 54px;
+    }
+}
+@media screen and (max-width: 320px){
+    .banner span {
+        font-size: 34px;
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -24,6 +35,7 @@ body {
 }
 
 .page_container {
+    min-width: 300px;
     width: 65%;
     margin: 0 auto;
 }
@@ -36,10 +48,9 @@ body {
 }
 .banner span {
     position: absolute;
-    top: 25px;
-    left: 50px;
+    top: 25%;
+    left: 5%;
     color: white;
-    font-size: 54px;
     font-family: 'Chilanka', cursive;
     font-weight: bolder;
 }
@@ -47,7 +58,7 @@ body {
 .premium_button {
     position: absolute;
     top: 25px;
-    right: 50px;
+    right: 5%;
     width: 100px;
     padding: 10px;
     border: none;
@@ -61,7 +72,7 @@ body {
 }
 .premium_button:hover {
     top: 26px;
-    right: 48px;
+    right: 5%;
     box-shadow: 0 0;
 }
 
@@ -88,22 +99,45 @@ body {
 
 .product {
     position: relative;
-    display: flex;
     margin-top: 10px;
     padding: 20px;
     color: #321b08;
     background-color: #ffff92;
 }
 
-.product_image {
+.product_left_part {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 150px;
     width: 30%;
 }
 
-.product_image img {
+.product_left_part img {
     width: 100%;
-    margin: 20px 10px 0 10px;
+    height: auto;
     border: 1px solid black;
     background-color: white;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    min-height: 120px;
+    width: 60%;
+    height: 40%;
+    margin: 10%;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.panel .status {
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .price {
@@ -119,8 +153,8 @@ body {
 }
 
 .product_info {
-    width: 600px;
-    margin-left: 50px;
+    display: inline-block;
+    margin-left: 5%;
 }
 
 .sel_box_container {
@@ -155,27 +189,6 @@ body {
     background-color: orange;
 }
 
-.panel {
-    position: absolute;
-    bottom: 0;
-    left: 6%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px;
-    margin: 20px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-.panel .status {
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bolder;
-}
-
 .add_to_cart,
 .remove_from_cart {
     width: 90px;
@@ -195,12 +208,13 @@ body {
 
 .shopping_cart {
     position: fixed;
-    top: 150px;
-    right: 30px;
+    top: 110px;
+    right: 0.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
+    min-width: 300px;
+    width: 13%;
     padding: 10px;
     background-color: #aaff8b;
 }
@@ -249,7 +263,7 @@ body {
 }
 
 .ground {
-    width: 250px;
+    width: 100%;
     height: 5px;
     background-color: black;
 }
@@ -265,7 +279,7 @@ body {
 }
 
 .shopping_list ul {
-    height: 500px;
+    height: 250px;
     list-style-type: none;
     overflow: hidden;
     overflow-y: scroll;
@@ -285,11 +299,11 @@ body {
     margin-top: 100px;
     color: white;
     background: linear-gradient(24deg, rgba(93,232,33,1) 0%, rgba(4,136,168,1) 100%);
-    font-size: 16px;
+    font-size: 90%;
     font-weight: bolder;
 }
 .footer div {
-    margin-left: 50px;
+    margin-left: 5%;
 }
 .footer a {
     color: white;
