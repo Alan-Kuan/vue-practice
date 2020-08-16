@@ -95,8 +95,12 @@ body {
     background-color: #ffff92;
 }
 
+.product_image {
+    width: 30%;
+}
+
 .product_image img {
-    width: 350px;
+    width: 100%;
     margin: 20px 10px 0 10px;
     border: 1px solid black;
     background-color: white;
@@ -219,7 +223,7 @@ body {
 
 .cart_container {
     position: relative;
-    width: 50px;
+    width: 20%;
     z-index: 1;
     cursor: pointer;
     transition: 1s;
@@ -228,7 +232,7 @@ body {
     -o-transition: 1s;
 }
 .cart_img {
-    width: 50px;
+    width: 100%;
 }
 .cart {
     position: absolute;
@@ -241,7 +245,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 45px;
+    width: 18%;
 }
 
 .ground {
