@@ -1,4 +1,3 @@
-
 Vue.component('product', {
     props: {
         premium: {
@@ -243,7 +242,7 @@ var app = new Vue({
         },
         total() {
             var total = 0;
-            for(idx in this.cart)
+            for(var idx in this.cart)
                 total += this.products[this.cart[idx].id].price;
 
             if(this.premium)
